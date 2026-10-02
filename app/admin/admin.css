@@ -1,0 +1,376 @@
+/* Admin — dashboard design system.
+   Sober, dense, high-info-density admin surface.
+   Not the mobile app frame — this is a desktop-first admin dashboard. */
+
+.admin {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  background: var(--color-neutral-100);
+  color: var(--color-text);
+}
+
+@media (max-width: 900px) {
+  .admin { grid-template-columns: 1fr; }
+}
+
+.admin-aside {
+  background: var(--color-neutral-900);
+  color: var(--color-neutral-100);
+  padding: 24px 18px;
+  display: flex; flex-direction: column; gap: 22px;
+  position: sticky; top: 0;
+  height: 100dvh;
+  overflow-y: auto;
+}
+
+@media (max-width: 900px) {
+  .admin-aside { position: static; height: auto; }
+}
+
+.admin-brand {
+  display: flex; flex-direction: column; gap: 2px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-accent-400) 25%, transparent);
+}
+.admin-brand-name {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--color-neutral-100);
+}
+.admin-brand-tag {
+  font-family: var(--font-heading);
+  font-size: 9px;
+  letter-spacing: 0.36em;
+  color: var(--color-accent-400);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.admin-nav { display: flex; flex-direction: column; gap: 2px; }
+.admin-nav-lbl {
+  font-family: var(--font-heading);
+  font-size: 9.5px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-accent-400);
+  margin: 12px 0 6px 4px;
+}
+.admin-nav a {
+  display: flex; align-items: center; gap: 8px;
+  padding: 9px 10px;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--color-neutral-300);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+}
+.admin-nav a:hover { color: var(--color-neutral-100); background: color-mix(in srgb, var(--color-neutral-100) 4%, transparent); }
+.admin-nav a[data-active="true"] {
+  color: var(--color-neutral-100);
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  border-left-color: var(--color-accent);
+}
+
+.admin-user {
+  margin-top: auto;
+  padding: 12px 10px;
+  border-top: 1px solid color-mix(in srgb, var(--color-accent-400) 20%, transparent);
+  display: flex; flex-direction: column; gap: 2px;
+}
+.admin-user-name {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--color-neutral-100);
+}
+.admin-user-email {
+  font-size: 11px;
+  color: var(--color-neutral-400);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.admin-user-back {
+  margin-top: 6px;
+  border: 0; background: transparent;
+  color: var(--color-accent-300);
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 0;
+  text-decoration: none;
+  align-self: flex-start;
+}
+
+.admin-main {
+  padding: 28px 32px 40px;
+  max-width: 1200px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-hd {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-divider);
+}
+.admin-hd-l { display: flex; flex-direction: column; gap: 4px; }
+.admin-hd-kicker {
+  font-family: var(--font-heading);
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+  font-feature-settings: "tnum";
+}
+.admin-hd h1 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 32px;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+}
+
+/* ── Metric cards ─────────────────────────────────────────── */
+.admin-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.admin-metric {
+  padding: 18px 20px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-divider);
+  display: flex; flex-direction: column; gap: 4px;
+}
+.admin-metric-lbl {
+  font-family: var(--font-heading);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-neutral-700);
+  font-feature-settings: "tnum";
+}
+.admin-metric-val {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  font-feature-settings: "tnum";
+}
+.admin-metric-sub {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 11px;
+  color: var(--color-neutral-600);
+}
+
+/* ── Tables ───────────────────────────────────────────────── */
+.admin-table-wrap {
+  background: var(--color-bg);
+  border: 1px solid var(--color-divider);
+  overflow-x: auto;
+}
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.admin-table th, .admin-table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-divider);
+  vertical-align: middle;
+}
+.admin-table th {
+  font-family: var(--font-heading);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-neutral-700);
+  font-weight: 400;
+  background: var(--color-neutral-100);
+  font-feature-settings: "tnum";
+  position: sticky; top: 0;
+}
+.admin-table tbody tr:hover { background: color-mix(in srgb, var(--color-accent-100) 40%, transparent); }
+.admin-table td.tnum { font-feature-settings: "tnum"; font-family: var(--font-heading); font-weight: 600; }
+.admin-table td.italic { font-family: var(--font-heading); font-style: italic; }
+.admin-table a {
+  color: var(--color-accent-700);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--color-accent);
+  font-family: var(--font-heading);
+  font-style: italic;
+}
+.admin-table a:hover { color: var(--color-accent-600); }
+
+.admin-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-family: var(--font-heading);
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 0.5px solid;
+  border-radius: 0;
+}
+.admin-badge-active { color: #1a6b3a; border-color: #4aae74; }
+.admin-badge-pending { color: var(--color-accent-800); border-color: var(--color-accent); }
+.admin-badge-canceled { color: #7c1d1d; border-color: #b04848; }
+.admin-badge-admin { color: var(--color-accent-800); border-color: var(--color-accent); }
+
+/* ── Forms ────────────────────────────────────────────────── */
+.admin-form {
+  background: var(--color-bg);
+  border: 1px solid var(--color-divider);
+  padding: 24px;
+  display: flex; flex-direction: column; gap: 16px;
+  max-width: 720px;
+}
+.admin-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.admin-field { display: flex; flex-direction: column; gap: 5px; }
+.admin-field > label {
+  font-family: var(--font-heading);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-neutral-700);
+}
+.admin-field input, .admin-field textarea, .admin-field select {
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--color-divider);
+  border-radius: 0;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-text);
+  outline: none;
+  font-feature-settings: "tnum";
+}
+.admin-field textarea {
+  height: auto;
+  min-height: 80px;
+  padding: 10px 12px;
+  font-family: var(--font-body);
+  resize: vertical;
+}
+.admin-field input:focus, .admin-field textarea:focus, .admin-field select:focus {
+  border-color: var(--color-accent);
+}
+.admin-actions {
+  display: flex; gap: 10px; align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-divider);
+  margin-top: 4px;
+}
+.admin-btn {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 0;
+  border: 1px solid;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.admin-btn-primary {
+  background: var(--color-neutral-900);
+  color: var(--color-bg);
+  border-color: var(--color-neutral-900);
+}
+.admin-btn-primary:hover:not(:disabled) {
+  background: var(--color-neutral-800);
+  border-color: var(--color-neutral-800);
+}
+.admin-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.admin-btn-secondary {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-divider);
+}
+.admin-btn-secondary:hover { background: var(--color-neutral-100); border-color: var(--color-neutral-500); }
+.admin-btn-danger {
+  background: transparent;
+  color: #7c1d1d;
+  border-color: #b04848;
+}
+.admin-btn-danger:hover { background: color-mix(in srgb, #b04848 8%, transparent); }
+
+.admin-error {
+  padding: 10px 12px;
+  background: color-mix(in srgb, #d84a4a 12%, transparent);
+  border-left: 2px solid #d84a4a;
+  font-size: 13px;
+  color: #7c1d1d;
+}
+.admin-success {
+  padding: 10px 12px;
+  background: color-mix(in srgb, var(--color-accent-100) 70%, transparent);
+  border-left: 2px solid var(--color-accent);
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 13.5px;
+  color: var(--color-accent-800);
+}
+
+/* ── Empty / not-configured states ────────────────────────── */
+.admin-empty {
+  padding: 40px 24px;
+  border: 1px dashed var(--color-divider);
+  text-align: center;
+  color: var(--color-neutral-700);
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.admin-empty strong { color: var(--color-text); font-style: normal; font-weight: 600; }
+.admin-empty code {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 12px;
+  background: var(--color-neutral-200);
+  padding: 1px 5px;
+  border-radius: 2px;
+  color: var(--color-neutral-900);
+}
+
+/* ── Utility ──────────────────────────────────────────────── */
+.admin-toolbar {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 12px; margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.admin-tabs {
+  display: flex; gap: 4px;
+  border-bottom: 1px solid var(--color-divider);
+  margin-bottom: 16px;
+}
+.admin-tabs a {
+  height: 40px;
+  padding: 0 14px;
+  display: inline-flex; align-items: center;
+  border-bottom: 1.5px solid transparent;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--color-neutral-600);
+  text-decoration: none;
+}
+.admin-tabs a[data-active="true"] { color: var(--color-text); border-bottom-color: var(--color-accent); }

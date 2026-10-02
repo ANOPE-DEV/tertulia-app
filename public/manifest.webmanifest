@@ -1,0 +1,12 @@
+{
+  "name": "Tertúlia · Empório de Finos",
+  "short_name": "Tertúlia",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f3f2f2",
+  "theme_color": "#f3f2f2",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
