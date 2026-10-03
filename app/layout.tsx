@@ -23,6 +23,14 @@ export const metadata: Metadata = {
   description:
     "Queijos, vinhos e charutos escolhidos por um sommelier. Entrega em Porto Feliz, Itu e Boituva.",
   manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: "Tertúlia",
+    statusBarStyle: "default",
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export const viewport: Viewport = {

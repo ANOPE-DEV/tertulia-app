@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Full-bleed dark background (iOS applies rounded corners automatically) -->
+  <rect width="200" height="200" fill="#2d2b2b"/>
+
+  <!-- Subtle inner warm wash -->
+  <defs>
+    <radialGradient id="wash" cx="50%" cy="42%" r="68%">
+      <stop offset="0%" stop-color="#3a2a1a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#1f1b16" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#wash)"/>
+
+  <!-- Outer dashed gold ring -->
+  <circle cx="100" cy="100" r="86" fill="none"
+          stroke="#e1ad66" stroke-width="1.6" stroke-dasharray="2 5" opacity="0.85"/>
+
+  <!-- Inner solid gold ring -->
+  <circle cx="100" cy="100" r="60" fill="none"
+          stroke="#e1ad66" stroke-width="1.4"/>
+
+  <!-- Italic T monogram -->
+  <text x="100" y="120" text-anchor="middle"
+        font-family="'Cormorant Garamond', 'Garamond', 'Georgia', serif"
+        font-style="italic" font-weight="400"
+        font-size="78" fill="#f8f4f4" letter-spacing="-2">T</text>
+
+  <!-- Thin gold filete under the T -->
+  <line x1="86" y1="135" x2="114" y2="135" stroke="#e1ad66" stroke-width="1.2"/>
+
+  <!-- Tiny jewel ornaments on the inner ring (N/S/E/W compass marks) -->
+  <circle cx="100" cy="40" r="1.8" fill="#e1ad66"/>
+  <circle cx="100" cy="160" r="1.8" fill="#e1ad66"/>
+  <circle cx="40" cy="100" r="1.8" fill="#e1ad66"/>
+  <circle cx="160" cy="100" r="1.8" fill="#e1ad66"/>
+</svg>

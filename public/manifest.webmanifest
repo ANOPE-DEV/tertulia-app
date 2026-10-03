@@ -1,12 +1,17 @@
 {
   "name": "Tertúlia · Empório de Finos",
   "short_name": "Tertúlia",
+  "description": "Queijos, vinhos e charutos escolhidos por um sommelier. Entrega em Porto Feliz, Itu e Boituva.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#f3f2f2",
+  "background_color": "#2d2b2b",
   "theme_color": "#f3f2f2",
+  "lang": "pt-BR",
   "icons": [
-    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/apple-icon", "sizes": "180x180", "type": "image/png", "purpose": "any" },
+    { "src": "/apple-icon", "sizes": "180x180", "type": "image/png", "purpose": "maskable" }
   ]
 }
